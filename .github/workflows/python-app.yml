@@ -32,7 +32,9 @@ jobs:
       env:
         APP_HOST: ${{ secrets.APP_HOST }}
         APP_SSH_USER: ${{ secrets.APP_SSH_USER }}
+        APP_SSH_SECRET_KEY: ${{ secrets.APP_SSH_SECRET_KEY }}
       run: |
-        ssh -o StrictHostKeyChecking=no ${APP_SSH_USER}@${APP_HOST} '
+        echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+        ssh -o StrictHostKeyChecking=no -i private_key ${APP_SSH_USER}@${APP_HOST} '
           echo "Hello World!!!"
         '
