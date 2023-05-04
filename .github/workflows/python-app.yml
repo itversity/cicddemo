@@ -36,3 +36,6 @@ jobs:
           mkdir -p cicddemo
         '
         scp -i /tmp/keys/private_key -r * ${APP_SSH_USER}@${APP_HOST}:cicddemo
+        ssh -i /tmp/keys/private_key ${APP_SSH_USER}@${APP_HOST} '
+          source cicddemo/setup.sh
+        '
