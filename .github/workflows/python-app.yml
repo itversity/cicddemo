@@ -31,5 +31,5 @@ jobs:
       run: |
         echo "$APP_SSH_SECRET_KEY" > private_key && chmod 600 private_key
         ssh -o StrictHostKeyChecking=no -i private_key ${APP_SSH_USER}@${APP_HOST} '
-          echo "Hello World"
+          echo "Hello World!!!"
         '
