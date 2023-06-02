@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Validate GitHub Action and VM Integration
       env:
-        FOO: ${{ variables.FOO }}
+        FOO: $FOO
 #       env:
 #         APP_HOST: ${{ secrets.APP_HOST }}
 #         APP_SSH_USER: ${{ secrets.APP_SSH_USER }}
