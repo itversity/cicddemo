@@ -28,3 +28,5 @@ jobs:
 #         ssh -o StrictHostKeyChecking=no -i /tmp/keys/private_key ${APP_SSH_USER}@${APP_HOST} '
 #           echo `hostname`
 #         '
+    - name: Run Hello World Application
+      run: python app.py
