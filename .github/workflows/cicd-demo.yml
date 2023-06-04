@@ -27,5 +27,5 @@ jobs:
         ssh -o StrictHostKeyChecking=no -i /tmp/keys/private_key ${APP_SSH_USER}@${APP_HOST} '
           echo `hostname`
         scp -i /tmp/keys/private_key cicddemo ${APP_SSH_USER}@${APP_HOST}:~/cicddemo
-        source ~/cicddemo/setup.sh
+        ssh -i /tmp/keys/private_key "source ~/cicddemo/setup.sh"
         '
