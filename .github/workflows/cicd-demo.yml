@@ -41,4 +41,3 @@ jobs:
         APP_SSH_SECRET_KEY: ${{ secrets.APP_SSH_SECRET_KEY }}
       run: |
         ssh -i /tmp/keys/private_key ${APP_SSH_USER}@${APP_HOST} "/bin/bash -c 'source ~/cicddemo/setup.sh'"
-
