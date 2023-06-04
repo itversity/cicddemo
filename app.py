@@ -1,7 +1,9 @@
 import os
+from dotenv import load_dotenv
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+load_dotenv('.env')
 db = SQLAlchemy()
 app = Flask(__name__)
 host = os.environ.get('CICD_DB_HOST')
@@ -27,5 +29,5 @@ class User(db.Model):
 
 @app.route('/')
 def hello_world():
-    rec = db.get_or_404(Course, 1)
-    return f"Hello, World from {user.user_first_name}"
+    user = db.get_or_404(User, 1)
+    return f"Hello, World from {user.first_name}"
